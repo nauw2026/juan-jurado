@@ -118,6 +118,25 @@
 .services--dark .service-card__link { color: var(--accent); }
 
 /* ============================
+   TESTIMONIALS — 3-col grid variant
+   ============================ */
+.testimonials--grid .testimonials__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+.testimonials--grid .testimonial {
+  padding: 40px 32px;
+  border: 1px solid var(--gray-200);
+  border-radius: 16px;
+  transition: border-color 0.4s var(--ease), box-shadow 0.4s var(--ease);
+}
+.testimonials--grid .testimonial:hover {
+  border-color: rgba(26,126,251,0.2);
+  box-shadow: 0 8px 40px rgba(0,0,0,0.04);
+}
+
+/* ============================
    PROCESS FOOTER (italic quote)
    ============================ */
 .process__footer {
@@ -280,6 +299,7 @@
   .pain__grid { grid-template-columns: repeat(2, 1fr); }
   .contact-layout { grid-template-columns: 1fr; }
   .contact-form__row { grid-template-columns: 1fr; }
+  .testimonials--grid .testimonials__grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 768px) {
