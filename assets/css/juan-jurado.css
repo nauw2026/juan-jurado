@@ -191,6 +191,10 @@
   color: inherit;
   display: block;
 }
+.cases__grid .work-card__img img {
+  object-fit: contain;
+  background: var(--gray-50);
+}
 .work-card__tags {
   display: flex;
   flex-wrap: wrap;
@@ -348,6 +352,11 @@
   display: block;
   font-size: 15px;
   font-weight: 300;
+}
+
+/* Form: servicio label lowercase */
+.contact-section .contact-form__group label[for="servicio"] {
+  text-transform: none;
 }
 
 /* Right column: form on dark bg */
