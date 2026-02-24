@@ -151,30 +151,33 @@
 }
 
 /* ============================
-   STATS — Light variant
+   STATS — Dark variant
    ============================ */
-.stats--light {
-  background: var(--light);
-  border-top: 1px solid var(--gray-200);
-  border-bottom: 1px solid var(--gray-200);
+.stats--dark {
+  background: var(--dark);
 }
-.stats--light .stat__number {
-  color: var(--black);
+.stats--dark .stat__label {
+  color: var(--gray-400);
 }
-.stats--light .stat__label {
-  color: var(--gray-500);
+
+/* ============================
+   CASES — 3-col grid (no slider)
+   ============================ */
+.cases__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 64px;
 }
-.stats--light .stat {
-  position: relative;
+.cases__grid .work-card {
+  flex: none;
+  text-decoration: none;
+  color: inherit;
+  display: block;
 }
-.stats--light .stat:not(:last-child)::after {
-  content: '';
-  position: absolute;
-  right: -24px;
-  top: 15%;
-  height: 70%;
-  width: 1px;
-  background: var(--gray-200);
+.cases__grid .work-card__metrics {
+  flex-wrap: wrap;
+  gap: 16px 24px;
 }
 
 /* ============================
@@ -361,9 +364,9 @@
   .pain__grid { grid-template-columns: repeat(2, 1fr); }
   .contact-layout { grid-template-columns: 1fr; }
   .contact-form__row { grid-template-columns: 1fr; }
+  .cases__grid { grid-template-columns: 1fr; }
   .testimonials--grid .testimonials__grid { grid-template-columns: 1fr; }
   .comp-services__list { grid-template-columns: 1fr; }
-  .stats--light .stat:not(:last-child)::after { display: none; }
 }
 
 @media (max-width: 768px) {
