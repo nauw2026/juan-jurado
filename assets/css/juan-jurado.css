@@ -574,6 +574,20 @@
   .services__grid--four { grid-template-columns: 1fr; }
   .pain__grid { grid-template-columns: 1fr; }
 
+  /* Footer: logo left, arrow right on same line */
+  .footer__bottom {
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .footer__bottom > span:last-of-type {
+    width: 100%;
+    order: 3;
+    margin-top: 12px;
+  }
+  .footer__top-btn {
+    margin-left: auto;
+  }
+
   /* Marquee: smooth infinite loop on mobile */
   .marquee__track {
     width: max-content;
