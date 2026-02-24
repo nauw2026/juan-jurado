@@ -513,7 +513,7 @@
   .pain__grid { grid-template-columns: 1fr; }
 
   /* Marquee: faster on mobile */
-  .marquee__track { animation-duration: 8s; }
+  .marquee__track { animation-duration: 4s; }
 
   /* Form: consistent field spacing */
   .contact-form__group { margin-bottom: 28px; }
