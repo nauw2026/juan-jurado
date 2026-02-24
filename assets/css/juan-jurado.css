@@ -501,10 +501,16 @@
 }
 
 @media (max-width: 768px) {
-  /* Mobile menu: opaque background */
-  .nav.nav--menu-open {
+  /* Mobile menu: opaque background — override scrolled state too */
+  .nav.nav--menu-open,
+  .nav.nav--menu-open.nav--scrolled {
     mix-blend-mode: normal;
     background: var(--black);
+    backdrop-filter: none;
+  }
+  .nav.nav--menu-open .nav__links--open a,
+  .nav.nav--menu-open.nav--scrolled .nav__links--open a {
+    color: var(--white);
   }
   .nav__links--open {
     align-items: flex-end;
@@ -533,7 +539,7 @@
   .pain__grid { grid-template-columns: 1fr; }
 
   /* Marquee: faster on mobile */
-  .marquee__track { animation-duration: 4s; }
+  .marquee__track { animation-duration: 15s; }
 
   /* Form: consistent field spacing */
   .contact-form__group { margin-bottom: 28px; }
