@@ -60,10 +60,10 @@
    CONSISTENT TITLE / SUBTITLE WIDTH
    ============================ */
 .section-title {
-  max-width: 60%;
+  max-width: 80%;
 }
 .section-subtitle {
-  max-width: 50%;
+  max-width: 60%;
 }
 
 /* ============================
@@ -104,8 +104,8 @@
 /* ============================
    SERVICES GRID MODIFIER (2-col for 4 cards)
    ============================ */
-.services__grid--two {
-  grid-template-columns: repeat(2, 1fr);
+.services__grid--four {
+  grid-template-columns: repeat(4, 1fr);
 }
 
 /* ============================
@@ -310,9 +310,9 @@
   .hero__photo { display: none; }
   .hero .hero__title { max-width: 100%; }
   .hero__ctas { flex-direction: column; }
-  .section-title { max-width: 80%; }
-  .section-subtitle { max-width: 70%; }
-  .services__grid--two { grid-template-columns: repeat(2, 1fr); }
+  .section-title { max-width: 90%; }
+  .section-subtitle { max-width: 80%; }
+  .services__grid--four { grid-template-columns: repeat(2, 1fr); }
   .pain__grid { grid-template-columns: repeat(2, 1fr); }
   .contact-layout { grid-template-columns: 1fr; }
   .contact-form__row { grid-template-columns: 1fr; }
@@ -322,6 +322,6 @@
 @media (max-width: 768px) {
   .hero__word { font-size: clamp(28px, 8vw, 40px); }
   .section-title, .section-subtitle { max-width: 100%; }
-  .services__grid--two { grid-template-columns: 1fr; }
+  .services__grid--four { grid-template-columns: 1fr; }
   .pain__grid { grid-template-columns: 1fr; }
 }
