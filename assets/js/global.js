@@ -1,5 +1,5 @@
 /* ============================================
-   JJ360° — Global JS
+   JJURADO — Global JS
    Based on Velarque design system
    ============================================ */
 
@@ -42,7 +42,8 @@
     }
     animateFollower();
 
-    const hoverTargets = 'a, button, .pain-card, .service-detail, .comp-card, .project-card, .value-block, .process-card, .contact-btn';
+    // Hover effect on interactive elements
+    const hoverTargets = 'a, button, .work-card, .service-card, .value-block, .pain-card, .contact-btn';
     document.querySelectorAll(hoverTargets).forEach(el => {
       el.addEventListener('mouseenter', () => follower.classList.add('hovering'));
       el.addEventListener('mouseleave', () => follower.classList.remove('hovering'));
@@ -71,24 +72,7 @@
     });
   }
 
-  // Smooth scroll for anchor links
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', (e) => {
-      const href = a.getAttribute('href');
-      if (href === '#') return;
-      e.preventDefault();
-      const target = document.querySelector(href);
-      if (target) {
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        if (navLinks) {
-          navLinks.classList.remove('nav__links--open');
-          if (navToggle) navToggle.classList.remove('nav__toggle--open');
-        }
-      }
-    });
-  });
-
-  // Active section detection on scroll
+  // Active section detection (scroll spy for single-page)
   const sections = document.querySelectorAll('section[id]');
   const navAnchors = document.querySelectorAll('.nav__links a[href^="#"]');
 
@@ -110,6 +94,23 @@
   }
   window.addEventListener('scroll', updateActiveNav, { passive: true });
 
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', (e) => {
+      const href = a.getAttribute('href');
+      if (href === '#') return;
+      e.preventDefault();
+      const target = document.querySelector(href);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if (navLinks) {
+          navLinks.classList.remove('nav__links--open');
+          if (navToggle) navToggle.classList.remove('nav__toggle--open');
+        }
+      }
+    });
+  });
+
   // --- SCROLL REVEAL ---
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -120,11 +121,11 @@
     });
   }, { threshold: 0.15, rootMargin: '0px 0px -80px 0px' });
 
-  document.querySelectorAll('.reveal-text, .reveal-up').forEach(el => {
+  document.querySelectorAll('.reveal-text, .reveal-up, .process-step').forEach(el => {
     revealObserver.observe(el);
   });
 
-  // Staggered reveal
+  // Staggered reveal (generic — works on any [data-stagger] container)
   const staggerObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -140,6 +141,19 @@
   document.querySelectorAll('[data-stagger]').forEach(el => {
     staggerObserver.observe(el);
   });
+
+  // --- PARALLAX ---
+  const parallaxEls = document.querySelectorAll('[data-parallax]');
+  if (parallaxEls.length && window.matchMedia('(min-width: 768px)').matches) {
+    window.addEventListener('scroll', () => {
+      parallaxEls.forEach(el => {
+        const speed = parseFloat(el.dataset.parallax);
+        const rect = el.getBoundingClientRect();
+        const offset = (rect.top - window.innerHeight / 2) * speed;
+        el.style.transform = `translateY(${offset}px)`;
+      });
+    }, { passive: true });
+  }
 
   // --- MAGNETIC BUTTONS ---
   document.querySelectorAll('[data-magnetic]').forEach(btn => {
