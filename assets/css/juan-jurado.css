@@ -130,39 +130,143 @@
 }
 
 /* ============================
-   CONTACT BUTTONS (in CTA final)
+   CONTACT SECTION — Two-column layout
    ============================ */
-.contact-cta__buttons {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-  margin-top: 40px;
+.contact-section {
+  padding: clamp(100px, 14vh, 200px) 0;
+  background: var(--black);
 }
-.contact-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 16px;
-  font-weight: 400;
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: clamp(48px, 6vw, 120px);
+  align-items: start;
+}
+
+/* Left column: info */
+.contact-layout__info .section-label {
+  color: var(--gray-500);
+}
+.contact-layout__title {
+  font-family: var(--sans);
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 300;
   color: var(--white);
-  padding: 18px 32px;
-  border-radius: 100px;
-  border: 1px solid rgba(255,255,255,0.15);
-  transition: all 0.4s var(--ease);
+  letter-spacing: -1px;
+  margin: 0 0 clamp(16px, 2vh, 24px);
+  line-height: 1.1;
 }
-.contact-btn:hover {
+.contact-layout__title em {
+  font-family: var(--serif);
+  color: var(--accent);
+}
+.contact-layout__desc {
+  font-size: 17px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--gray-400);
+  max-width: 400px;
+}
+
+/* Contact channels (stacked) */
+.contact-channels {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  margin-top: 48px;
+}
+.contact-channel {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: var(--gray-400);
+  transition: color 0.3s var(--ease);
+}
+.contact-channel:hover {
+  color: var(--white);
+}
+.contact-channel__icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: border-color 0.3s var(--ease), background 0.3s var(--ease);
+}
+.contact-channel:hover .contact-channel__icon {
   border-color: var(--accent);
-  background: rgba(26,126,251,0.1);
+  background: rgba(26,126,251,0.08);
 }
-.contact-btn svg {
-  width: 20px;
-  height: 20px;
+.contact-channel__icon svg {
+  width: 18px;
+  height: 18px;
   stroke: var(--accent);
   fill: none;
   stroke-width: 1.5;
   stroke-linecap: round;
   stroke-linejoin: round;
+}
+.contact-channel__label {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--gray-500);
+  margin-bottom: 2px;
+}
+.contact-channel__value {
+  display: block;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+/* Right column: form on dark bg */
+.contact-section .contact-form__group input,
+.contact-section .contact-form__group select,
+.contact-section .contact-form__group textarea {
+  color: var(--white);
+  border-bottom-color: rgba(255,255,255,0.12);
+}
+.contact-section .contact-form__group input::placeholder,
+.contact-section .contact-form__group textarea::placeholder {
+  color: transparent;
+}
+.contact-section .contact-form__group input:focus,
+.contact-section .contact-form__group select:focus,
+.contact-section .contact-form__group textarea:focus {
+  border-bottom-color: var(--accent);
+}
+.contact-section .contact-form__group label {
+  color: var(--gray-500);
+}
+.contact-section .contact-form__group input:focus ~ label,
+.contact-section .contact-form__group input:not(:placeholder-shown) ~ label,
+.contact-section .contact-form__group textarea:focus ~ label,
+.contact-section .contact-form__group textarea:not(:placeholder-shown) ~ label,
+.contact-section .contact-form__group select:focus ~ label,
+.contact-section .contact-form__group select.has-value ~ label {
+  color: var(--gray-400);
+}
+.contact-section .contact-form__group select option {
+  background: var(--dark);
+  color: var(--white);
+}
+.contact-section .contact-form .btn-main {
+  background: var(--accent);
+  color: var(--white);
+  border-color: var(--accent);
+}
+.contact-section .contact-form .btn-main:hover {
+  background: #1568d4;
+}
+.contact-section .contact-form__legal {
+  color: var(--gray-500);
+}
+.contact-section .contact-form__note {
+  color: var(--gray-500);
 }
 
 /* ============================
@@ -174,12 +278,12 @@
   .hero__ctas { flex-direction: column; }
   .services__grid--two { grid-template-columns: repeat(2, 1fr); }
   .pain__grid { grid-template-columns: repeat(2, 1fr); }
+  .contact-layout { grid-template-columns: 1fr; }
+  .contact-form__row { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 768px) {
   .hero__word { font-size: clamp(28px, 8vw, 40px); }
   .services__grid--two { grid-template-columns: 1fr; }
   .pain__grid { grid-template-columns: 1fr; }
-  .contact-cta__buttons { flex-direction: column; align-items: center; }
-  .contact-btn { width: 100%; max-width: 320px; justify-content: center; }
 }
