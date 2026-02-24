@@ -463,8 +463,21 @@
   .pain__grid { grid-template-columns: repeat(2, 1fr); }
   .contact-layout { grid-template-columns: 1fr; }
   .contact-form__row { grid-template-columns: 1fr; }
-  .cases__grid { grid-template-columns: 1fr; }
-  .case-card { aspect-ratio: 4/3; }
+  /* Cases: horizontal slider */
+  .cases__grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 16px;
+    padding-bottom: 8px;
+  }
+  .cases__grid::-webkit-scrollbar { display: none; }
+  .case-card {
+    flex: 0 0 85vw;
+    scroll-snap-align: start;
+    aspect-ratio: 3/4;
+  }
   .testimonials--grid .testimonials__grid { grid-template-columns: 1fr; }
   .comp-services__list { grid-template-columns: 1fr; }
 }
@@ -500,7 +513,7 @@
   .pain__grid { grid-template-columns: 1fr; }
 
   /* Marquee: faster on mobile */
-  .marquee__track { animation-duration: 12s; }
+  .marquee__track { animation-duration: 8s; }
 
   /* Form: consistent field spacing */
   .contact-form__group { margin-bottom: 28px; }
