@@ -161,6 +161,14 @@
 }
 
 /* ============================
+   CENTERED TITLE MODIFIER
+   ============================ */
+.section-title--center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ============================
    WHY ME — stacked header (label + title left-aligned)
    ============================ */
 .why-velarque__header {
