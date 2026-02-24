@@ -548,7 +548,7 @@
   /* Marquee: ensure full width + faster on mobile */
   .marquee__track {
     width: max-content;
-    animation-duration: 20s;
+    animation-duration: 5s;
   }
 
   /* Form: consistent field spacing */
