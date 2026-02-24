@@ -455,8 +455,20 @@
   .services__grid--four { grid-template-columns: 1fr; }
   .pain__grid { grid-template-columns: 1fr; }
 
+  /* Marquee: faster on mobile */
+  .marquee__track { animation-duration: 12s; }
+
   /* Form: consistent field spacing */
   .contact-form__group { margin-bottom: 28px; }
   .contact-form__row { gap: 0; }
   .contact-form__row .contact-form__group { margin-bottom: 28px; }
+
+  /* Form select: match other fields */
+  .contact-form__group select { font-size: 16px; }
+  .contact-form__group select ~ label {
+    top: -8px;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: none;
+  }
 }
