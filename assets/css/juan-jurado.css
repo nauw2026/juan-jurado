@@ -483,14 +483,16 @@
 }
 
 @media (max-width: 768px) {
-  /* Mobile menu: right-aligned, smaller links */
+  /* Mobile menu: opaque background */
+  .nav.nav--menu-open {
+    mix-blend-mode: normal;
+    background: var(--black);
+  }
   .nav__links--open {
     align-items: flex-end;
     justify-content: flex-start;
     padding: 100px clamp(24px, 4vw, 80px) 0;
     background: var(--black);
-    mix-blend-mode: normal;
-    isolation: isolate;
   }
   .nav__links--open a {
     font-size: 16px;

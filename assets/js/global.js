@@ -69,6 +69,7 @@
     navToggle.addEventListener('click', () => {
       navLinks.classList.toggle('nav__links--open');
       navToggle.classList.toggle('nav__toggle--open');
+      if (nav) nav.classList.toggle('nav--menu-open');
     });
   }
 
@@ -106,6 +107,7 @@
         if (navLinks) {
           navLinks.classList.remove('nav__links--open');
           if (navToggle) navToggle.classList.remove('nav__toggle--open');
+          if (nav) nav.classList.remove('nav--menu-open');
         }
       }
     });
