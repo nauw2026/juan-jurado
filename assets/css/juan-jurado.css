@@ -576,8 +576,10 @@
 
   /* Footer: logo left, arrow right on same line */
   .footer__bottom {
+    flex-direction: row !important;
     flex-wrap: wrap;
     align-items: center;
+    gap: 0 !important;
   }
   .footer__bottom > span:last-of-type {
     width: 100%;
@@ -591,7 +593,7 @@
   /* Marquee: smooth infinite loop on mobile */
   .marquee__track {
     width: max-content;
-    animation-duration: 30s;
+    animation-duration: 35s;
   }
 
   /* Form: consistent field spacing */
