@@ -31,7 +31,6 @@
     <div class="nav__inner">
       <a href="#" class="nav__logo">jjurado<span>.</span></a>
       <div class="nav__links" id="navLinks">
-        <a href="#hero" data-hover="Inicio">Inicio</a>
         <a href="#servicios" data-hover="Servicios">Servicios</a>
         <a href="#casos" data-hover="Casos de éxito">Casos de éxito</a>
         <a href="#proceso" data-hover="Proceso">Proceso</a>
@@ -92,51 +91,69 @@
     </div>
   </section>
 
-  <!-- 2. PAIN POINTS -->
+  <!-- 2. TRUST BAR -->
+  <section class="trust-bar">
+    <p class="trust-bar__label">Empresas que ya confían en mí</p>
+    <div class="trust-bar__marquee">
+      <div class="trust-bar__track">
+        <img src="https://placehold.co/120x28/eee/999?text=Cliente+1" alt="Cliente" class="trust-bar__logo">
+        <img src="https://placehold.co/120x28/eee/999?text=Cliente+2" alt="Cliente" class="trust-bar__logo">
+        <img src="https://placehold.co/120x28/eee/999?text=Cliente+3" alt="Cliente" class="trust-bar__logo">
+        <img src="https://placehold.co/120x28/eee/999?text=Cliente+4" alt="Cliente" class="trust-bar__logo">
+        <img src="https://placehold.co/120x28/eee/999?text=Cliente+5" alt="Cliente" class="trust-bar__logo">
+        <img src="https://placehold.co/120x28/eee/999?text=Cliente+6" alt="Cliente" class="trust-bar__logo">
+        <img src="https://placehold.co/120x28/eee/999?text=Cliente+7" alt="Cliente" class="trust-bar__logo">
+        <img src="https://placehold.co/120x28/eee/999?text=Cliente+8" alt="Cliente" class="trust-bar__logo">
+        <!-- Duplicate for seamless loop -->
+        <img src="https://placehold.co/120x28/eee/999?text=Cliente+1" alt="Cliente" class="trust-bar__logo">
+        <img src="https://placehold.co/120x28/eee/999?text=Cliente+2" alt="Cliente" class="trust-bar__logo">
+        <img src="https://placehold.co/120x28/eee/999?text=Cliente+3" alt="Cliente" class="trust-bar__logo">
+        <img src="https://placehold.co/120x28/eee/999?text=Cliente+4" alt="Cliente" class="trust-bar__logo">
+        <img src="https://placehold.co/120x28/eee/999?text=Cliente+5" alt="Cliente" class="trust-bar__logo">
+        <img src="https://placehold.co/120x28/eee/999?text=Cliente+6" alt="Cliente" class="trust-bar__logo">
+        <img src="https://placehold.co/120x28/eee/999?text=Cliente+7" alt="Cliente" class="trust-bar__logo">
+        <img src="https://placehold.co/120x28/eee/999?text=Cliente+8" alt="Cliente" class="trust-bar__logo">
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. PAIN POINTS (dark value-blocks) -->
   <section class="pain-section">
     <div class="container">
-      <p class="section-label reveal-text">( ¿Te suena? )</p>
-      <h2 class="section-title reveal-text" style="color: var(--white);">Si algo de esto te pasa, puedo ayudarte</h2>
-      <div class="pain__grid" data-stagger>
-        <div class="pain-card" data-stagger-item>
-          <div class="pain-card__icon">
-            <svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-          </div>
-          <h3 class="pain-card__title">Inviertes sin saber qué funciona</h3>
-          <p class="pain-card__text">Gastas en marketing pero no tienes claro qué canal genera retorno real.</p>
+      <p class="section-label reveal-text">¿Te suena?</p>
+      <h2 class="section-title reveal-text">Si algo de esto te pasa, puedo <em>ayudarte</em></h2>
+      <div class="value-blocks__grid" data-stagger>
+        <div class="value-block reveal-up" data-stagger-item>
+          <span class="value-block__num">01</span>
+          <h3 class="value-block__title">Inviertes sin saber qué funciona</h3>
+          <p class="value-block__text">Gastas en marketing pero no tienes claro qué canal genera retorno real.</p>
         </div>
-        <div class="pain-card" data-stagger-item>
-          <div class="pain-card__icon">
-            <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-          </div>
-          <h3 class="pain-card__title">Tu web no convierte</h3>
-          <p class="pain-card__text">Tienes visitas pero no se traducen en leads ni ventas. El problema no es el tráfico.</p>
+        <div class="value-block reveal-up" data-stagger-item>
+          <span class="value-block__num">02</span>
+          <h3 class="value-block__title">Tu web no convierte</h3>
+          <p class="value-block__text">Tienes visitas pero no se traducen en leads ni ventas. El problema no es el tráfico.</p>
         </div>
-        <div class="pain-card" data-stagger-item>
-          <div class="pain-card__icon">
-            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          </div>
-          <h3 class="pain-card__title">Todo se hace a mano</h3>
-          <p class="pain-card__text">Tu equipo pierde horas en tareas repetitivas que deberían estar automatizadas.</p>
+        <div class="value-block reveal-up" data-stagger-item>
+          <span class="value-block__num">03</span>
+          <h3 class="value-block__title">Todo se hace a mano</h3>
+          <p class="value-block__text">Tu equipo pierde horas en tareas repetitivas que deberían estar automatizadas.</p>
         </div>
-        <div class="pain-card" data-stagger-item>
-          <div class="pain-card__icon">
-            <svg viewBox="0 0 24 24"><line x1="18" y1="2" x2="22" y2="6"/><path d="M7.5 20.5L19 9l-4-4L3.5 16.5 2 22z"/></svg>
-          </div>
-          <h3 class="pain-card__title">Falta un plan claro</h3>
-          <p class="pain-card__text">Tienes herramientas y canales activos, pero no una estrategia que los conecte.</p>
+        <div class="value-block reveal-up" data-stagger-item>
+          <span class="value-block__num">04</span>
+          <h3 class="value-block__title">Falta un plan claro</h3>
+          <p class="value-block__text">Tienes herramientas y canales activos, pero no una estrategia que los conecte.</p>
         </div>
       </div>
       <p class="pain__footer reveal-text">No necesitas más herramientas. Necesitas un sistema que funcione.</p>
     </div>
   </section>
 
-  <!-- 3. SERVICES (4 main) -->
+  <!-- 4. SERVICES (4 main) -->
   <section class="services" id="servicios">
     <div class="container">
       <div class="services__header">
-        <p class="section-label reveal-text">( Servicios )</p>
-        <h2 class="section-title reveal-text">Cuatro pilares para un marketing digital que funciona.</h2>
+        <p class="section-label reveal-text">Servicios</p>
+        <h2 class="section-title reveal-text">Cuatro pilares para un marketing digital que <em>funciona</em>.</h2>
         <p class="section-subtitle reveal-text">Cada negocio es distinto, pero todo ecosistema digital rentable se construye sobre estas bases.</p>
       </div>
       <div class="services__grid services__grid--two" data-stagger>
@@ -176,12 +193,12 @@
     </div>
   </section>
 
-  <!-- 4. COMPLEMENTARY SERVICES (dark) -->
+  <!-- 5. COMPLEMENTARY SERVICES (dark) -->
   <section class="services services--dark">
     <div class="container">
       <div class="services__header">
-        <p class="section-label reveal-text">( También puedo ayudarte con )</p>
-        <h2 class="section-title reveal-text">Servicios complementarios.</h2>
+        <p class="section-label reveal-text">También puedo ayudarte con</p>
+        <h2 class="section-title reveal-text">Servicios <em>complementarios</em>.</h2>
         <p class="section-subtitle reveal-text">Servicios que se integran con los pilares principales para completar tu ecosistema digital.</p>
       </div>
       <div class="services__grid" data-stagger>
@@ -213,7 +230,7 @@
     </div>
   </section>
 
-  <!-- 5. STATS -->
+  <!-- 6. STATS -->
   <section class="stats">
     <div class="container">
       <div class="stats__grid">
@@ -237,12 +254,12 @@
     </div>
   </section>
 
-  <!-- 6. CASES -->
+  <!-- 7. CASES -->
   <section class="cases" id="casos">
     <div class="container">
       <div class="cases__header">
-        <p class="section-label reveal-text">( Casos de éxito )</p>
-        <h2 class="section-title reveal-text">Proyectos que hablan por sí solos.</h2>
+        <p class="section-label reveal-text">Casos de éxito</p>
+        <h2 class="section-title reveal-text">Proyectos que hablan por sí <em>solos</em>.</h2>
         <p class="section-subtitle reveal-text">Algunas de las webs y proyectos digitales en los que he trabajado.</p>
       </div>
     </div>
@@ -250,9 +267,59 @@
       <div class="work__track">
         <article class="work-card">
           <div class="work-card__img">
-            <img src="https://placehold.co/560x373/1a1a1a/333?text=NAUW+UR+MUSIC" alt="NAUW UR MUSIC" loading="lazy">
+            <img src="https://placehold.co/560x373/1a1a1a/333?text=PERFORMANZE" alt="Performanze" loading="lazy">
             <div class="work-card__overlay">
-              <span class="work-card__tag">Web + Paid Media</span>
+              <span class="work-card__tag">Estrategia 360 completa</span>
+            </div>
+          </div>
+          <div class="work-card__info">
+            <h3 class="work-card__title">Performanze</h3>
+            <div class="work-card__metrics">
+              <div class="work-card__metric">
+                <span class="work-card__metric-val">Web</span>
+                <span class="work-card__metric-lab">Diseño + Desarrollo</span>
+              </div>
+              <div class="work-card__metric">
+                <span class="work-card__metric-val">PPC</span>
+                <span class="work-card__metric-lab">Paid Media</span>
+              </div>
+              <div class="work-card__metric">
+                <span class="work-card__metric-val">IA</span>
+                <span class="work-card__metric-lab">Automatización</span>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="work-card">
+          <div class="work-card__img">
+            <img src="https://placehold.co/560x373/0a0a0a/333?text=VELARQUE" alt="Velarque" loading="lazy">
+            <div class="work-card__overlay">
+              <span class="work-card__tag">Web + Paid Media + IA</span>
+            </div>
+          </div>
+          <div class="work-card__info">
+            <h3 class="work-card__title">Velarque</h3>
+            <div class="work-card__metrics">
+              <div class="work-card__metric">
+                <span class="work-card__metric-val">Web</span>
+                <span class="work-card__metric-lab">Diseño + Desarrollo</span>
+              </div>
+              <div class="work-card__metric">
+                <span class="work-card__metric-val">PPC</span>
+                <span class="work-card__metric-lab">Paid Media</span>
+              </div>
+              <div class="work-card__metric">
+                <span class="work-card__metric-val">Auto</span>
+                <span class="work-card__metric-lab">IA + Email</span>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="work-card">
+          <div class="work-card__img">
+            <img src="https://placehold.co/560x373/f5f5f0/333?text=NAUW+UR+MUSIC" alt="NAUW UR MUSIC" loading="lazy">
+            <div class="work-card__overlay">
+              <span class="work-card__tag">Estrategia 360 completa</span>
             </div>
           </div>
           <div class="work-card__info">
@@ -267,58 +334,8 @@
                 <span class="work-card__metric-lab">Paid Media</span>
               </div>
               <div class="work-card__metric">
-                <span class="work-card__metric-val">360</span>
-                <span class="work-card__metric-lab">Estrategia</span>
-              </div>
-            </div>
-          </div>
-        </article>
-        <article class="work-card">
-          <div class="work-card__img">
-            <img src="https://placehold.co/560x373/0a0a0a/333?text=Velarque" alt="Velarque" loading="lazy">
-            <div class="work-card__overlay">
-              <span class="work-card__tag">Web + Automatización + CRM</span>
-            </div>
-          </div>
-          <div class="work-card__info">
-            <h3 class="work-card__title">Velarque</h3>
-            <div class="work-card__metrics">
-              <div class="work-card__metric">
-                <span class="work-card__metric-val">Web</span>
-                <span class="work-card__metric-lab">Diseño + Desarrollo</span>
-              </div>
-              <div class="work-card__metric">
-                <span class="work-card__metric-val">Auto</span>
+                <span class="work-card__metric-val">IA</span>
                 <span class="work-card__metric-lab">Automatización</span>
-              </div>
-              <div class="work-card__metric">
-                <span class="work-card__metric-val">CRM</span>
-                <span class="work-card__metric-lab">Integración</span>
-              </div>
-            </div>
-          </div>
-        </article>
-        <article class="work-card">
-          <div class="work-card__img">
-            <img src="https://placehold.co/560x373/f5f5f0/333?text=LIT" alt="LIT" loading="lazy">
-            <div class="work-card__overlay">
-              <span class="work-card__tag">Web + Automatización</span>
-            </div>
-          </div>
-          <div class="work-card__info">
-            <h3 class="work-card__title">LIT</h3>
-            <div class="work-card__metrics">
-              <div class="work-card__metric">
-                <span class="work-card__metric-val">Web</span>
-                <span class="work-card__metric-lab">Desarrollo</span>
-              </div>
-              <div class="work-card__metric">
-                <span class="work-card__metric-val">Auto</span>
-                <span class="work-card__metric-lab">Automatización</span>
-              </div>
-              <div class="work-card__metric">
-                <span class="work-card__metric-val">PPC</span>
-                <span class="work-card__metric-lab">Paid Media</span>
               </div>
             </div>
           </div>
@@ -327,11 +344,11 @@
     </div>
   </section>
 
-  <!-- 7. WHY ME -->
+  <!-- 8. WHY ME -->
   <section class="why-velarque">
     <div class="container">
       <div class="why-velarque__header">
-        <p class="section-label reveal-text">( ¿Por qué yo? )</p>
+        <p class="section-label reveal-text">¿Por qué yo?</p>
         <h2 class="section-title reveal-text">No soy una agencia. Soy tu socio <em>digital</em>.</h2>
       </div>
       <div class="value-blocks__grid">
@@ -359,12 +376,12 @@
     </div>
   </section>
 
-  <!-- 8. PROCESS -->
+  <!-- 9. PROCESS -->
   <section class="process" id="proceso">
     <div class="container">
       <div class="process__header">
-        <p class="section-label reveal-text">( Proceso )</p>
-        <h2 class="section-title reveal-text">Así empezamos a trabajar.</h2>
+        <p class="section-label reveal-text">Proceso</p>
+        <h2 class="section-title reveal-text">Así empezamos a <em>trabajar</em>.</h2>
       </div>
       <div class="process__steps">
         <div class="process-step">
@@ -411,7 +428,7 @@
     </div>
   </section>
 
-  <!-- 9. CTA FINAL + CONTACT -->
+  <!-- 10. CTA FINAL + CONTACT -->
   <section class="cta-final" id="contacto">
     <div class="container">
       <h2 class="cta-final__title reveal-text">¿Hablamos de tu <em>proyecto</em>?</h2>
@@ -432,46 +449,6 @@
       </div>
     </div>
   </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer__top">
-        <div class="footer__brand">
-          <a href="#" class="footer__logo">jjurado<span>.</span></a>
-          <p class="footer__desc">Consultor de marketing digital 360. Estrategia, tecnología y ejecución al servicio de tu negocio.</p>
-        </div>
-        <div class="footer__links">
-          <div class="footer__col">
-            <span class="footer__col-title">Servicios</span>
-            <a href="#servicios">Estrategia Digital</a>
-            <a href="#servicios">Desarrollo Web</a>
-            <a href="#servicios">IA y Automatización</a>
-            <a href="#servicios">Paid Media</a>
-          </div>
-          <div class="footer__col">
-            <span class="footer__col-title">Empresa</span>
-            <a href="#casos">Casos de éxito</a>
-            <a href="#proceso">Proceso</a>
-            <a href="#contacto">Contacto</a>
-          </div>
-          <div class="footer__col">
-            <span class="footer__col-title">Contacto</span>
-            <a href="mailto:jjurado.ppc@gmail.com">jjurado.ppc@gmail.com</a>
-            <span>+34 646 114 717</span>
-            <span>Madrid, España</span>
-          </div>
-        </div>
-      </div>
-      <div class="footer__bottom">
-        <span>© 2026 Juan Jurado García Del Río. Todos los derechos reservados.</span>
-        <div class="footer__legal">
-          <a href="#">Aviso Legal</a>
-          <a href="#">Política de Privacidad</a>
-        </div>
-      </div>
-    </div>
-  </footer>
 
   <script src="assets/js/global.js"></script>
   <script src="assets/js/homepage.js"></script>
