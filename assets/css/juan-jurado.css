@@ -208,20 +208,12 @@
   object-fit: contain;
   background: var(--gray-50);
 }
-.work-card__tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-.work-card__pill {
-  display: inline-block;
-  padding: 4px 14px;
-  font-size: 12px;
-  font-weight: 400;
-  letter-spacing: 0.5px;
+.work-card__desc {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.6;
   color: var(--gray-500);
-  border: 1px solid var(--gray-200);
-  border-radius: 100px;
+  margin-top: 8px;
 }
 
 /* ============================
@@ -436,8 +428,19 @@
 }
 
 @media (max-width: 768px) {
-  .hero__word { font-size: clamp(28px, 8vw, 40px); }
+  /* Hero: clear fixed nav + prevent text clipping */
+  .hero { min-height: 100svh; align-items: flex-start; padding-top: 120px; }
+  .hero__word { font-size: clamp(28px, 8vw, 40px); letter-spacing: -1px; }
+  .hero__title { margin-bottom: 32px; }
+  .hero__desc { font-size: 15px; }
+  .hero__cta { padding: 16px 24px; font-size: 13px; }
+
   .section-title, .section-subtitle { max-width: 100%; }
   .services__grid--four { grid-template-columns: 1fr; }
   .pain__grid { grid-template-columns: 1fr; }
+
+  /* Form: consistent field spacing */
+  .contact-form__group { margin-bottom: 28px; }
+  .contact-form__row { gap: 0; }
+  .contact-form__row .contact-form__group { margin-bottom: 28px; }
 }
