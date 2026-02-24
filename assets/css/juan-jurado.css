@@ -57,6 +57,20 @@
 }
 
 /* ============================
+   UNIFORM SECTION SPACING
+   ============================ */
+.pain-section,
+.services,
+.stats,
+.cases,
+.why-velarque,
+.testimonials,
+.process,
+.contact-section {
+  padding: clamp(80px, 10vh, 140px) 0;
+}
+
+/* ============================
    CONSISTENT TITLE / SUBTITLE WIDTH
    ============================ */
 .section-title {
@@ -70,7 +84,6 @@
    PAIN SECTION (3-col grid of statements)
    ============================ */
 .pain-section {
-  padding: clamp(80px, 12vh, 160px) 0;
   background: var(--dark);
 }
 .pain-section .section-label {
@@ -264,7 +277,6 @@
    CONTACT SECTION — Two-column layout
    ============================ */
 .contact-section {
-  padding: clamp(100px, 14vh, 200px) 0;
   background: var(--black);
 }
 .contact-layout {

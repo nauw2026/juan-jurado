@@ -85,56 +85,56 @@
     resetAuto();
   }
 
-  // --- HORIZONTAL DRAG SLIDER (Work/Cases) ---
-  const slider = document.getElementById('workSlider');
-  if (slider) {
-    let isDown = false;
-    let startX;
-    let scrollLeft;
-
-    slider.addEventListener('mousedown', (e) => {
-      isDown = true;
-      slider.style.cursor = 'grabbing';
-      startX = e.pageX - slider.offsetLeft;
-      scrollLeft = slider.scrollLeft;
-    });
-
-    slider.addEventListener('mouseleave', () => {
-      isDown = false;
-      slider.style.cursor = 'grab';
-    });
-
-    slider.addEventListener('mouseup', () => {
-      isDown = false;
-      slider.style.cursor = 'grab';
-    });
-
-    slider.addEventListener('mousemove', (e) => {
-      if (!isDown) return;
+  // --- CONTACT FORM (Formspree) ---
+  const contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
-      const x = e.pageX - slider.offsetLeft;
-      const walk = (x - startX) * 1.5;
-      slider.scrollLeft = scrollLeft - walk;
+
+      const btn = contactForm.querySelector('button[type="submit"]');
+      const btnText = btn.querySelector('span');
+      const originalText = btnText.textContent;
+
+      // Validate required fields
+      const required = contactForm.querySelectorAll('[required]');
+      let valid = true;
+      required.forEach(field => {
+        field.classList.remove('error');
+        if (!field.value.trim()) {
+          field.classList.add('error');
+          valid = false;
+        }
+      });
+      if (!valid) return;
+
+      // Loading state
+      btnText.textContent = 'Enviando...';
+      btn.disabled = true;
+
+      try {
+        const data = new FormData(contactForm);
+        const res = await fetch(contactForm.action, {
+          method: 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (res.ok) {
+          btnText.textContent = 'Mensaje enviado';
+          contactForm.reset();
+          setTimeout(() => {
+            btnText.textContent = originalText;
+            btn.disabled = false;
+          }, 4000);
+        } else {
+          throw new Error('Error en el envío');
+        }
+      } catch (err) {
+        btnText.textContent = 'Error, inténtalo de nuevo';
+        btn.disabled = false;
+        setTimeout(() => { btnText.textContent = originalText; }, 3000);
+      }
     });
-
-    // Touch support
-    let touchStartX;
-    let touchScrollLeft;
-
-    slider.addEventListener('touchstart', (e) => {
-      touchStartX = e.touches[0].pageX;
-      touchScrollLeft = slider.scrollLeft;
-    }, { passive: true });
-
-    slider.addEventListener('touchmove', (e) => {
-      const x = e.touches[0].pageX;
-      const walk = (touchStartX - x) * 1.2;
-      slider.scrollLeft = touchScrollLeft + walk;
-    }, { passive: true });
-
-    slider.style.overflowX = 'auto';
-    slider.style.scrollbarWidth = 'none';
-    slider.style.msOverflowStyle = 'none';
   }
 
 })();

@@ -62,7 +62,7 @@
       } else {
         nav.classList.remove('nav--scrolled');
       }
-    });
+    }, { passive: true });
   }
 
   if (navToggle && navLinks) {
