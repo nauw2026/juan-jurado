@@ -474,7 +474,7 @@
   }
   .cases__grid::-webkit-scrollbar { display: none; }
   .case-card {
-    flex: 0 0 85vw;
+    flex: 0 0 75vw;
     scroll-snap-align: start;
     aspect-ratio: 3/4;
   }
