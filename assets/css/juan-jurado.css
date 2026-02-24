@@ -508,25 +508,22 @@
 }
 
 @media (max-width: 768px) {
-  /* Mobile menu: opaque background — override scrolled state too */
+  /* Mobile menu: disable blend mode on nav when open */
   .nav.nav--menu-open,
   .nav.nav--menu-open.nav--scrolled {
     mix-blend-mode: normal;
-    background:
-      radial-gradient(ellipse at 20% 50%, rgba(26,126,251,0.15) 0%, transparent 60%),
-      radial-gradient(ellipse at 80% 20%, rgba(26,126,251,0.08) 0%, transparent 50%),
-      var(--black);
+    background: transparent;
     backdrop-filter: none;
   }
-  .nav.nav--menu-open .nav__links--open a,
-  .nav.nav--menu-open.nav--scrolled .nav__links--open a {
-    color: var(--white);
-  }
+  /* Full-screen overlay with gradient background */
   .nav__links--open {
     align-items: flex-end;
     justify-content: flex-start;
     padding: 100px clamp(24px, 4vw, 80px) 0;
-    background: transparent;
+    background:
+      radial-gradient(ellipse at 20% 50%, rgba(26,126,251,0.15) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 20%, rgba(26,126,251,0.08) 0%, transparent 50%),
+      var(--black);
   }
   .nav__links--open a {
     font-size: 16px;
@@ -548,8 +545,11 @@
   .services__grid--four { grid-template-columns: 1fr; }
   .pain__grid { grid-template-columns: 1fr; }
 
-  /* Marquee: faster on mobile */
-  .marquee__track { animation-duration: 15s; }
+  /* Marquee: ensure full width + faster on mobile */
+  .marquee__track {
+    width: max-content;
+    animation-duration: 20s;
+  }
 
   /* Form: consistent field spacing */
   .contact-form__group { margin-bottom: 28px; }
