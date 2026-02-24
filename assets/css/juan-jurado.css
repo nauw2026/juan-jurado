@@ -516,7 +516,7 @@
     backdrop-filter: none;
   }
   /* Full-screen overlay with gradient background */
-  .nav__links--open {
+  .nav .nav__links--open {
     align-items: flex-end;
     justify-content: flex-start;
     padding: 100px clamp(24px, 4vw, 80px) 0;
@@ -525,10 +525,11 @@
       radial-gradient(ellipse at 80% 20%, rgba(26,126,251,0.08) 0%, transparent 50%),
       var(--black);
   }
-  .nav__links--open a {
+  .nav .nav__links--open a {
     font-size: 16px;
     font-weight: 300;
     letter-spacing: 0.5px;
+    color: var(--white);
   }
   .nav__toggle {
     z-index: 100;
