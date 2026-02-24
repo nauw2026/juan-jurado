@@ -428,6 +428,22 @@
 }
 
 @media (max-width: 768px) {
+  /* Mobile menu: right-aligned, smaller links */
+  .nav__links--open {
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding: 100px clamp(24px, 4vw, 80px) 0;
+    background: var(--black);
+  }
+  .nav__links--open a {
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+  }
+  .nav__toggle {
+    z-index: 100;
+  }
+
   /* Hero: clear fixed nav + prevent text clipping */
   .hero { min-height: 100svh; align-items: flex-start; padding-top: 120px; }
   .hero__word { font-size: clamp(28px, 8vw, 40px); letter-spacing: -1px; }
