@@ -471,6 +471,8 @@
     -webkit-overflow-scrolling: touch;
     gap: 16px;
     padding-bottom: 8px;
+    margin-right: calc(-1 * clamp(24px, 4vw, 80px));
+    padding-right: clamp(24px, 4vw, 80px);
   }
   .cases__grid::-webkit-scrollbar { display: none; }
   .case-card {
@@ -478,7 +480,23 @@
     scroll-snap-align: start;
     aspect-ratio: 3/4;
   }
-  .testimonials--grid .testimonials__grid { grid-template-columns: 1fr; }
+
+  /* Testimonials: horizontal slider */
+  .testimonials--grid .testimonials__grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 16px;
+    padding-bottom: 8px;
+    margin-right: calc(-1 * clamp(24px, 4vw, 80px));
+    padding-right: clamp(24px, 4vw, 80px);
+  }
+  .testimonials--grid .testimonials__grid::-webkit-scrollbar { display: none; }
+  .testimonials--grid .testimonial {
+    flex: 0 0 80vw;
+    scroll-snap-align: start;
+  }
   .comp-services__list { grid-template-columns: 1fr; }
 }
 
