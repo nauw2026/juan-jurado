@@ -508,25 +508,25 @@
 }
 
 @media (max-width: 768px) {
-  /* Mobile menu: disable blend mode on nav when open */
-  .nav.nav--menu-open,
-  .nav.nav--menu-open.nav--scrolled {
-    mix-blend-mode: normal;
-    background: transparent;
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
+  /* ---- MOBILE MENU (bulletproof) ---- */
+  /* 1. Kill nav bg/blend/blur/transition instantly when open */
+  .nav.nav--menu-open {
+    mix-blend-mode: normal !important;
+    background: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border-bottom-color: transparent !important;
+    transition: none !important;
   }
-  /* Toggle always visible and clickable above overlay */
+  /* 2. Toggle: always on top + always white X when open */
   .nav__toggle {
     position: relative;
     z-index: 200;
   }
-  /* Toggle X always white when menu open */
-  .nav--menu-open .nav__toggle span,
-  .nav--menu-open.nav--scrolled .nav__toggle span {
-    background: var(--white);
+  .nav.nav--menu-open .nav__toggle span {
+    background: var(--white) !important;
   }
-  /* Full-screen overlay with gradient background */
+  /* 3. Fullscreen overlay — the actual visible background */
   .nav .nav__links--open {
     align-items: flex-end;
     justify-content: flex-start;
@@ -534,13 +534,13 @@
     background:
       radial-gradient(ellipse at 20% 50%, rgba(26,126,251,0.15) 0%, transparent 60%),
       radial-gradient(ellipse at 80% 20%, rgba(26,126,251,0.08) 0%, transparent 50%),
-      var(--black);
+      var(--black) !important;
   }
   .nav .nav__links--open a {
     font-size: 16px;
     font-weight: 300;
     letter-spacing: 0.5px;
-    color: var(--white);
+    color: var(--white) !important;
   }
 
   /* Hero: clear fixed nav + prevent text clipping */
@@ -554,10 +554,10 @@
   .services__grid--four { grid-template-columns: 1fr; }
   .pain__grid { grid-template-columns: 1fr; }
 
-  /* Marquee: ensure full width + faster on mobile */
+  /* Marquee: smooth infinite loop on mobile */
   .marquee__track {
     width: max-content;
-    animation-duration: 12s;
+    animation-duration: 25s;
   }
 
   /* Form: consistent field spacing */
