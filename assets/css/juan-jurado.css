@@ -514,6 +514,17 @@
     mix-blend-mode: normal;
     background: transparent;
     backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+  /* Toggle always visible and clickable above overlay */
+  .nav__toggle {
+    position: relative;
+    z-index: 200;
+  }
+  /* Toggle X always white when menu open */
+  .nav--menu-open .nav__toggle span,
+  .nav--menu-open.nav--scrolled .nav__toggle span {
+    background: var(--white);
   }
   /* Full-screen overlay with gradient background */
   .nav .nav__links--open {
@@ -531,9 +542,6 @@
     letter-spacing: 0.5px;
     color: var(--white);
   }
-  .nav__toggle {
-    z-index: 100;
-  }
 
   /* Hero: clear fixed nav + prevent text clipping */
   .hero { min-height: 100svh; align-items: flex-start; padding-top: 120px; }
@@ -549,7 +557,7 @@
   /* Marquee: ensure full width + faster on mobile */
   .marquee__track {
     width: max-content;
-    animation-duration: 5s;
+    animation-duration: 12s;
   }
 
   /* Form: consistent field spacing */
