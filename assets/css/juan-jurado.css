@@ -109,28 +109,73 @@
 }
 
 /* ============================
-   SERVICES DARK VARIANT
+   COMPLEMENTARY SERVICES (compact row)
    ============================ */
-.services--dark {
-  background: var(--dark);
+.comp-services {
+  padding: clamp(48px, 6vh, 80px) 0;
+  border-top: 1px solid var(--gray-200);
 }
-.services--dark .section-label { color: var(--gray-400); }
-.services--dark .section-title { color: var(--white); }
-.services--dark .section-subtitle { color: var(--gray-400); }
-.services--dark .service-card {
-  background: rgba(255,255,255,0.02);
-  border-color: rgba(255,255,255,0.06);
+.comp-services .section-label {
+  margin-bottom: 32px;
 }
-.services--dark .service-card:hover {
-  background: rgba(255,255,255,0.04);
-  border-color: rgba(26,126,251,0.2);
-  box-shadow: none;
-  transform: translateY(-8px);
+.comp-services__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
 }
-.services--dark .service-card__title { color: var(--white); }
-.services--dark .service-card__text { color: var(--gray-400); }
-.services--dark .service-card__icon { color: var(--accent); }
-.services--dark .service-card__link { color: var(--accent); }
+.comp-service {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+.comp-service svg {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  stroke: var(--accent);
+  fill: none;
+  stroke-width: 1.2;
+  margin-top: 2px;
+}
+.comp-service__title {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--black);
+  margin-bottom: 4px;
+}
+.comp-service__text {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.6;
+  color: var(--gray-500);
+}
+
+/* ============================
+   STATS — Light variant
+   ============================ */
+.stats--light {
+  background: var(--light);
+  border-top: 1px solid var(--gray-200);
+  border-bottom: 1px solid var(--gray-200);
+}
+.stats--light .stat__number {
+  color: var(--black);
+}
+.stats--light .stat__label {
+  color: var(--gray-500);
+}
+.stats--light .stat {
+  position: relative;
+}
+.stats--light .stat:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: -24px;
+  top: 15%;
+  height: 70%;
+  width: 1px;
+  background: var(--gray-200);
+}
 
 /* ============================
    TESTIMONIALS — 3-col grid variant
@@ -317,6 +362,8 @@
   .contact-layout { grid-template-columns: 1fr; }
   .contact-form__row { grid-template-columns: 1fr; }
   .testimonials--grid .testimonials__grid { grid-template-columns: 1fr; }
+  .comp-services__list { grid-template-columns: 1fr; }
+  .stats--light .stat:not(:last-child)::after { display: none; }
 }
 
 @media (max-width: 768px) {
