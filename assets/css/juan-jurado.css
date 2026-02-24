@@ -191,9 +191,20 @@
   color: inherit;
   display: block;
 }
-.cases__grid .work-card__metrics {
+.work-card__tags {
+  display: flex;
   flex-wrap: wrap;
-  gap: 16px 24px;
+  gap: 8px;
+}
+.work-card__pill {
+  display: inline-block;
+  padding: 4px 14px;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  color: var(--gray-500);
+  border: 1px solid var(--gray-200);
+  border-radius: 100px;
 }
 
 /* ============================
@@ -224,12 +235,12 @@
   font-weight: 300;
   line-height: 1.7;
 }
-.testimonials--grid .testimonial__name a {
+.testimonials--grid .testimonial__role a {
   color: inherit;
   text-decoration: none;
   transition: color 0.3s var(--ease);
 }
-.testimonials--grid .testimonial__name a:hover {
+.testimonials--grid .testimonial__role a:hover {
   color: var(--accent);
 }
 
