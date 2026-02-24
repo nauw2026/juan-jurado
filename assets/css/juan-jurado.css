@@ -161,6 +161,14 @@
 }
 
 /* ============================
+   WHY ME — stacked header (label + title left-aligned)
+   ============================ */
+.why-velarque__header {
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+/* ============================
    CASES — 3-col grid (no slider)
    ============================ */
 .cases__grid {
