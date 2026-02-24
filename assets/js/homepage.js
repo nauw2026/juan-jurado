@@ -85,6 +85,13 @@
     resetAuto();
   }
 
+  // --- SELECT has-value class ---
+  document.querySelectorAll('.contact-form__group select').forEach(sel => {
+    sel.addEventListener('change', () => {
+      sel.classList.toggle('has-value', sel.value !== '');
+    });
+  });
+
   // --- CONTACT FORM (Formspree) ---
   const contactForm = document.getElementById('contactForm');
   if (contactForm) {

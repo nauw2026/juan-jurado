@@ -392,8 +392,15 @@
   font-weight: 300;
 }
 
-/* Form: servicio label lowercase */
+/* Form: servicio select — fix label position */
 .contact-section .contact-form__group label[for="servicio"] {
+  text-transform: none;
+}
+.contact-form__group select:not(.has-value):not(:focus) ~ label {
+  top: 16px;
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: 0;
   text-transform: none;
 }
 
