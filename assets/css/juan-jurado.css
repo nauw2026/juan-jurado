@@ -458,6 +458,26 @@
 }
 
 /* ============================
+   FOOTER — Back to top button
+   ============================ */
+.footer__top-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.15);
+  color: var(--gray-400);
+  transition: all 0.3s var(--ease);
+}
+.footer__top-btn:hover {
+  border-color: var(--accent);
+  color: var(--white);
+  background: rgba(26,126,251,0.08);
+}
+
+/* ============================
    RESPONSIVE — JJ ADDITIONS
    ============================ */
 @media (max-width: 1024px) {
@@ -557,7 +577,7 @@
   /* Marquee: smooth infinite loop on mobile */
   .marquee__track {
     width: max-content;
-    animation-duration: 25s;
+    animation-duration: 30s;
   }
 
   /* Form: consistent field spacing */
