@@ -4,6 +4,19 @@
    ============================================ */
 
 /* ============================
+   DARK BG — Hero-style gradient on all dark sections
+   ============================ */
+.pain-section,
+.stats--dark,
+.contact-section,
+.footer {
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(26,126,251,0.15) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(26,126,251,0.08) 0%, transparent 50%),
+    var(--black);
+}
+
+/* ============================
    HERO FIXES (sizing + photo)
    ============================ */
 .hero__word {
@@ -82,9 +95,7 @@
 /* ============================
    PAIN SECTION (3-col grid of statements)
    ============================ */
-.pain-section {
-  background: var(--dark);
-}
+.pain-section {}
 .pain-section .section-label {
   color: var(--gray-400);
 }
@@ -165,9 +176,7 @@
 /* ============================
    STATS — Dark variant
    ============================ */
-.stats--dark {
-  background: var(--dark);
-}
+.stats--dark {}
 .stats--dark .stat__label {
   color: var(--gray-400);
 }
@@ -302,9 +311,7 @@
 /* ============================
    CONTACT SECTION — Two-column layout
    ============================ */
-.contact-section {
-  background: var(--black);
-}
+.contact-section {}
 .contact-layout {
   display: grid;
   grid-template-columns: 1fr 1.2fr;
@@ -505,7 +512,10 @@
   .nav.nav--menu-open,
   .nav.nav--menu-open.nav--scrolled {
     mix-blend-mode: normal;
-    background: var(--black);
+    background:
+      radial-gradient(ellipse at 20% 50%, rgba(26,126,251,0.15) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 20%, rgba(26,126,251,0.08) 0%, transparent 50%),
+      var(--black);
     backdrop-filter: none;
   }
   .nav.nav--menu-open .nav__links--open a,
@@ -516,7 +526,7 @@
     align-items: flex-end;
     justify-content: flex-start;
     padding: 100px clamp(24px, 4vw, 80px) 0;
-    background: var(--black);
+    background: transparent;
   }
   .nav__links--open a {
     font-size: 16px;
