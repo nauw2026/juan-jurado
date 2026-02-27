@@ -92,7 +92,7 @@
     });
   });
 
-  // --- CONTACT FORM (Formspree) ---
+  // --- CONTACT FORM (Formsubmit.co) ---
   const contactForm = document.getElementById('contactForm');
   if (contactForm) {
     contactForm.addEventListener('submit', async (e) => {
