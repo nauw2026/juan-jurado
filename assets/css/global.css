@@ -948,6 +948,43 @@ em { font-family: var(--serif); font-style: italic; }
   margin-top: 6px;
 }
 .contact-form .btn-main { margin-top: 16px; }
+
+/* Form feedback messages */
+.contact-form__feedback {
+  margin-top: 20px;
+  padding: 0;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  line-height: 1.5;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.4s var(--ease), transform 0.4s var(--ease);
+  pointer-events: none;
+}
+.contact-form__feedback.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.contact-form__feedback.is-success {
+  color: #34d399;
+}
+.contact-form__feedback.is-error {
+  color: #f87171;
+}
+.contact-form__feedback .feedback-icon {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  vertical-align: -3px;
+  margin-right: 8px;
+  stroke-width: 2;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
 .contact-form__note {
   text-align: center;
   font-size: 13px;

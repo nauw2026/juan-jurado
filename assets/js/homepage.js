@@ -94,9 +94,30 @@
 
   // --- CONTACT FORM (Formsubmit.co) ---
   const contactForm = document.getElementById('contactForm');
+  const formFeedback = document.getElementById('formFeedback');
+
+  function showFeedback(type, message) {
+    formFeedback.className = 'contact-form__feedback';
+    const icon = type === 'success'
+      ? '<svg class="feedback-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>'
+      : '<svg class="feedback-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>';
+    formFeedback.innerHTML = icon + message;
+    formFeedback.classList.add(type === 'success' ? 'is-success' : 'is-error');
+    requestAnimationFrame(() => formFeedback.classList.add('is-visible'));
+  }
+
+  function hideFeedback() {
+    formFeedback.classList.remove('is-visible');
+    setTimeout(() => {
+      formFeedback.className = 'contact-form__feedback';
+      formFeedback.innerHTML = '';
+    }, 400);
+  }
+
   if (contactForm) {
     contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
+      hideFeedback();
 
       const btn = contactForm.querySelector('button[type="submit"]');
       const btnText = btn.querySelector('span');
@@ -127,19 +148,18 @@
         });
 
         if (res.ok) {
-          btnText.textContent = 'Mensaje enviado';
           contactForm.reset();
-          setTimeout(() => {
-            btnText.textContent = originalText;
-            btn.disabled = false;
-          }, 4000);
+          btnText.textContent = originalText;
+          btn.disabled = false;
+          showFeedback('success', 'Mensaje enviado correctamente. Te responderé lo antes posible.');
+          setTimeout(hideFeedback, 6000);
         } else {
           throw new Error('Error en el envío');
         }
       } catch (err) {
-        btnText.textContent = 'Error, inténtalo de nuevo';
+        btnText.textContent = originalText;
         btn.disabled = false;
-        setTimeout(() => { btnText.textContent = originalText; }, 3000);
+        showFeedback('error', 'No se pudo enviar el mensaje. Inténtalo de nuevo o escríbeme directamente a jjurado.ppc@gmail.com');
       }
     });
   }
