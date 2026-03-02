@@ -159,7 +159,7 @@
       } catch (err) {
         btnText.textContent = originalText;
         btn.disabled = false;
-        showFeedback('error', 'No se pudo enviar el mensaje. Inténtalo de nuevo o escríbeme directamente a jjurado.ppc@gmail.com');
+        showFeedback('error', 'No se pudo enviar el mensaje. Inténtalo de nuevo o escríbeme directamente a jjuradogarciadelrio@gmail.com');
       }
     });
   }
